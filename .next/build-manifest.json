@@ -32,6 +32,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/booking.js"
+    ],
+    "/property/[id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/property/[id].js"
     ]
   },
   "ampFirstPages": []
