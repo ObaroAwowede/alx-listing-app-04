@@ -59,3 +59,11 @@ export interface Review {
 export interface ReviewProps {
     reviews: Review[];
 }
+
+export interface BookingDetails {
+  propertyName: string;
+  startDate: string; 
+  totalNights: number;
+  bookingFee: number;
+  price: number;
+}

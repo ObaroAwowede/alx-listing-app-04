@@ -22,16 +22,22 @@ export default function BookingForm() {
     setMessage(null);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
     try {
-      const response = await axios.post("/api/bookings", formData);
+      await axios.post("/api/bookings", formData);
       alert("Booking confirmed!");
     } catch (error) {
-      setError("Failed to submit booking.");
+      if (axios.isAxiosError(error)) {
+        setError(`Failed to submit booking: ${error.message}`);
+        console.error("Booking submission error:", error.response?.data || error.message);
+      } else {
+        setError("An unexpected error occurred.");
+        console.error("Unexpected error:", error);
+      }
     } finally {
       setLoading(false);
     }

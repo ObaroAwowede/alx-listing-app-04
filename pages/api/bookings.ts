@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 // i'm using this array to store the booking data
-const bookings: Array<Record<string, any>> = [];
+const bookings: Array<Record<string, unknown>> = [];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {

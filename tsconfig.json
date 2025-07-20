@@ -17,6 +17,9 @@
       "@/*": ["./*"]
     }
   },
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off"
+  },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "constants/index.ts"],
   "exclude": ["node_modules"]
 }
